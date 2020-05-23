@@ -52,9 +52,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.library</groupId>
-            <artifactId>library-resource</artifactId>
-            <scope>test</scope>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.7.Final</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

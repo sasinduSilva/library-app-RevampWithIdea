@@ -158,6 +158,5 @@
         <module>library-model</module>
         <module>library-resource</module>
         <module>library-int-tests</module>
-        <module>library-int-tests</module>
     </modules>
 </project>
