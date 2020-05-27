@@ -1,7 +1,7 @@
-2020-05-23 15:10:35,687 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
-2020-05-23 15:10:35,959 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
-2020-05-23 15:10:36,059 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.1.0.Final "Kenny" starting
-2020-05-23 15:10:36,065 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+2020-05-26 22:00:13,978 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.3.Final
+2020-05-26 22:00:14,188 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.2.Final
+2020-05-26 22:00:14,268 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.1.0.Final "Kenny" starting
+2020-05-26 22:00:14,273 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
 	awt.toolkit = sun.awt.X11.XToolkit
 	file.encoding = UTF-8
 	file.encoding.pkg = sun.io
@@ -65,7 +65,7 @@
 	org.xml.sax.driver = __redirected.__XMLReaderFactory
 	os.arch = amd64
 	os.name = Linux
-	os.version = 5.3.0-51-generic
+	os.version = 5.3.0-53-generic
 	path.separator = :
 	sun.arch.data.model = 64
 	sun.boot.class.path = /opt/jdk/jdk1.8.0_251/jre/lib/resources.jar:/opt/jdk/jdk1.8.0_251/jre/lib/rt.jar:/opt/jdk/jdk1.8.0_251/jre/lib/sunrsasign.jar:/opt/jdk/jdk1.8.0_251/jre/lib/jsse.jar:/opt/jdk/jdk1.8.0_251/jre/lib/jce.jar:/opt/jdk/jdk1.8.0_251/jre/lib/charsets.jar:/opt/jdk/jdk1.8.0_251/jre/lib/jfr.jar:/opt/jdk/jdk1.8.0_251/jre/classes
@@ -85,73 +85,98 @@
 	user.language = en
 	user.name = sasindu
 	user.timezone = Asia/Colombo
-2020-05-23 15:10:36,067 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Xmx512m -Djava.util.logging.manager=org.jboss.logmanager.LogManager -ea -Djboss.home.dir=target/wildfly-8.1.0.Final -Dorg.jboss.boot.log.file=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/configuration/logging.properties -Djboss.bundles.dir=target/wildfly-8.1.0.Final/bundles 
-2020-05-23 15:10:37,430 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
-2020-05-23 15:10:37,447 INFO  [org.xnio] (MSC service thread 1-8) XNIO version 3.2.2.Final
-2020-05-23 15:10:37,457 INFO  [org.xnio.nio] (MSC service thread 1-8) XNIO NIO Implementation Version 3.2.2.Final
-2020-05-23 15:10:37,567 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
-2020-05-23 15:10:37,579 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
-2020-05-23 15:10:37,581 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
-2020-05-23 15:10:37,582 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
-2020-05-23 15:10:37,591 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 4.0.3.Final
-2020-05-23 15:10:37,597 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-5) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.5.Final)
-2020-05-23 15:10:37,611 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
-2020-05-23 15:10:37,637 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
-2020-05-23 15:10:37,643 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) JBAS010417: Started Driver service with driver-name = h2
-2020-05-23 15:10:37,703 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
-2020-05-23 15:10:37,709 INFO  [org.jboss.as.security] (MSC service thread 1-6) JBAS013170: Current PicketBox version=4.0.21.Beta1
-2020-05-23 15:10:37,716 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
-2020-05-23 15:10:37,745 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
-2020-05-23 15:10:37,865 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017502: Undertow 1.0.15.Final starting
-2020-05-23 15:10:37,865 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.0.15.Final starting
-2020-05-23 15:10:37,874 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Starting Naming Service
-2020-05-23 15:10:37,882 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) JBAS015400: Bound mail session [java:jboss/mail/Default]
-2020-05-23 15:10:37,963 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/welcome-content
-2020-05-23 15:10:37,968 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017525: Started server default-server.
-2020-05-23 15:10:37,978 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017531: Host default-host starting
-2020-05-23 15:10:38,065 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017519: Undertow HTTP listener default listening on /127.0.0.1:8080
-2020-05-23 15:10:38,128 INFO  [org.jboss.as.jacorb] (MSC service thread 1-7) JBAS016330: CORBA ORB Service started
-2020-05-23 15:10:38,164 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) JBAS015012: Started FileSystemDeploymentService for directory /home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/deployments
-2020-05-23 15:10:38,224 WARN  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
-2020-05-23 15:10:38,281 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
-2020-05-23 15:10:38,312 INFO  [org.jboss.as.jacorb] (MSC service thread 1-8) JBAS016328: CORBA Naming Service started
-2020-05-23 15:10:38,505 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.4.Final
-2020-05-23 15:10:38,550 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/data/messagingjournal,bindingsDirectory=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/data/messagingbindings,largeMessagesDirectory=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/data/messaginglargemessages,pagingDirectory=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/data/messagingpaging)
-2020-05-23 15:10:38,552 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221006: Waiting to obtain live lock
-2020-05-23 15:10:38,579 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221013: Using NIO Journal
-2020-05-23 15:10:38,848 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 56) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
-2020-05-23 15:10:38,866 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support CORE
-2020-05-23 15:10:38,869 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support AMQP
-2020-05-23 15:10:38,873 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221043: Adding protocol support STOMP
-2020-05-23 15:10:38,952 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221034: Waiting to obtain live lock
-2020-05-23 15:10:38,952 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221035: Live Server Obtained live lock
-2020-05-23 15:10:39,518 INFO  [org.jboss.messaging] (MSC service thread 1-8) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
-2020-05-23 15:10:39,518 INFO  [org.jboss.messaging] (MSC service thread 1-5) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
-2020-05-23 15:10:39,633 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221007: Server is now live
-2020-05-23 15:10:39,634 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 56) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [75b5dad6-9cd9-11ea-a559-0fc65c4b9671] 
-2020-05-23 15:10:39,681 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 56) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
-2020-05-23 15:10:39,684 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221003: trying to deploy queue jms.queue.DLQ
-2020-05-23 15:10:39,724 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) JBAS010406: Registered connection factory java:/JmsXA
-2020-05-23 15:10:39,803 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/jms/queue/DLQ
-2020-05-23 15:10:39,803 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
-2020-05-23 15:10:39,804 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 57) HQ221003: trying to deploy queue jms.queue.ExpiryQueue
-2020-05-23 15:10:39,820 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 57) JBAS011601: Bound messaging object to jndi name java:/jms/queue/ExpiryQueue
-2020-05-23 15:10:39,833 INFO  [org.hornetq.ra] (MSC service thread 1-3) HornetQ resource adaptor started
-2020-05-23 15:10:39,833 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-3) IJ020002: Deployed: file://RaActivatorhornetq-ra
-2020-05-23 15:10:39,837 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
-2020-05-23 15:10:39,837 INFO  [org.jboss.as.messaging] (MSC service thread 1-3) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
-2020-05-23 15:10:40,033 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
-2020-05-23 15:10:40,034 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
-2020-05-23 15:10:40,034 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.1.0.Final "Kenny" started in 5335ms - Started 218 of 266 services (92 services are lazy, passive or on-demand)
-2020-05-23 15:10:44,842 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
-2020-05-23 15:10:44,847 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 26) JBAS011605: Unbound messaging object to jndi name java:/jms/queue/ExpiryQueue
-2020-05-23 15:10:44,844 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017532: Host default-host stopping
-2020-05-23 15:10:44,850 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010418: Stopped Driver service with driver-name = h2
-2020-05-23 15:10:44,853 INFO  [org.jboss.as.messaging] (MSC service thread 1-3) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
-2020-05-23 15:10:44,856 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
-2020-05-23 15:10:44,895 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 21) HQ151003: HornetQ resource adaptor stopped
-2020-05-23 15:10:45,059 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 21) HQ221002: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [75b5dad6-9cd9-11ea-a559-0fc65c4b9671] stopped
-2020-05-23 15:10:45,063 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017521: Undertow HTTP listener default suspending
-2020-05-23 15:10:45,070 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017520: Undertow HTTP listener default stopped, was bound to localhost/127.0.0.1:8080
-2020-05-23 15:10:45,073 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017506: Undertow 1.0.15.Final stopping
-2020-05-23 15:10:45,131 INFO  [org.jboss.as] (MSC service thread 1-3) JBAS015950: WildFly 8.1.0.Final "Kenny" stopped in 302ms
+2020-05-26 22:00:14,274 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Xmx512m -Djava.util.logging.manager=org.jboss.logmanager.LogManager -ea -Djboss.home.dir=target/wildfly-8.1.0.Final -Dorg.jboss.boot.log.file=/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/log/server.log -Dlogging.configuration=file:/home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/configuration/logging.properties -Djboss.bundles.dir=target/wildfly-8.1.0.Final/bundles 
+2020-05-26 22:00:15,499 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2020-05-26 22:00:15,522 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.2.2.Final
+2020-05-26 22:00:15,534 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.2.2.Final
+2020-05-26 22:00:15,779 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 34) WFLYIO001: Worker 'default' has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+2020-05-26 22:00:15,821 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 30) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2020-05-26 22:00:15,819 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 52) JBAS010153: Node identifier property is set to the default value. Please make sure it is unique.
+2020-05-26 22:00:15,851 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 42) JBAS012615: Activated the following JSF Implementations: [main]
+2020-05-26 22:00:15,854 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017502: Undertow 1.0.15.Final starting
+2020-05-26 22:00:15,856 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 35) JBAS010280: Activating Infinispan subsystem.
+2020-05-26 22:00:15,859 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 36) JBAS016300: Activating JacORB Subsystem
+2020-05-26 22:00:15,860 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 51) JBAS013171: Activating Security Subsystem
+2020-05-26 22:00:15,860 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 54) JBAS015537: Activating WebServices Extension
+2020-05-26 22:00:15,861 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 46) JBAS011800: Activating Naming Subsystem
+2020-05-26 22:00:15,861 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017502: Undertow 1.0.15.Final starting
+2020-05-26 22:00:15,858 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 4.0.3.Final
+2020-05-26 22:00:15,878 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-4) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.5.Final)
+2020-05-26 22:00:15,888 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) JBAS010417: Started Driver service with driver-name = h2
+2020-05-26 22:00:15,919 INFO  [org.jboss.as.security] (MSC service thread 1-8) JBAS013170: Current PicketBox version=4.0.21.Beta1
+2020-05-26 22:00:15,942 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Starting Naming Service
+2020-05-26 22:00:15,943 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2020-05-26 22:00:16,279 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 53) JBAS017527: Creating file handler for path /home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/welcome-content
+2020-05-26 22:00:16,328 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017525: Started server default-server.
+2020-05-26 22:00:16,342 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017531: Host default-host starting
+2020-05-26 22:00:16,402 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-8) MSC000001: Failed to start service jboss.undertow.listener.default: org.jboss.msc.service.StartException in service jboss.undertow.listener.default: Could not start http listener
+	at org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:137)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_251]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_251]
+	at java.lang.Thread.run(Thread.java:748) [rt.jar:1.8.0_251]
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method) [rt.jar:1.8.0_251]
+	at sun.nio.ch.Net.bind(Net.java:433) [rt.jar:1.8.0_251]
+	at sun.nio.ch.Net.bind(Net.java:425) [rt.jar:1.8.0_251]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) [rt.jar:1.8.0_251]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) [rt.jar:1.8.0_251]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:67) [rt.jar:1.8.0_251]
+	at org.xnio.nio.NioXnioWorker.createTcpConnectionServer(NioXnioWorker.java:175)
+	at org.xnio.XnioWorker.createStreamConnectionServer(XnioWorker.java:242) [xnio-api-3.2.2.Final.jar:3.2.2.Final]
+	at org.wildfly.extension.undertow.HttpListenerService.startListening(HttpListenerService.java:112)
+	at org.wildfly.extension.undertow.ListenerService.start(ListenerService.java:134)
+	... 5 more
+
+2020-05-26 22:00:16,520 INFO  [org.jboss.as.jacorb] (MSC service thread 1-1) JBAS016330: CORBA ORB Service started
+2020-05-26 22:00:16,598 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-8) JBAS015012: Started FileSystemDeploymentService for directory /home/sasindu/IdeaProjects/library-int-tests/target/wildfly-8.1.0.Final/standalone/deployments
+2020-05-26 22:00:16,684 INFO  [org.jboss.as.jacorb] (MSC service thread 1-2) JBAS016328: CORBA Naming Service started
+2020-05-26 22:00:16,689 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2020-05-26 22:00:16,695 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "messaging"),
+    ("hornetq-server" => "default")
+]) - failure description: {
+    "JBAS014771: Services with missing/unavailable dependencies" => ["jboss.messaging.default is missing [jboss.http-upgrade-registry.default]"],
+    "JBAS014879: One or more services were unable to start due to one or more indirect dependencies not being available." => {
+        "Services that were unable to start:" => ["jboss.messaging.default.jms.manager"],
+        "Services that may be the cause:" => [
+            "jboss.http-upgrade-registry.default",
+            "jboss.remoting.remotingConnectorInfoService.http-remoting-connector"
+        ]
+    }
+}
+2020-05-26 22:00:16,699 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "undertow"),
+    ("server" => "default-server"),
+    ("http-listener" => "default")
+]) - failure description: {"JBAS014671: Failed services" => {"jboss.undertow.listener.default" => "org.jboss.msc.service.StartException in service jboss.undertow.listener.default: Could not start http listener
+    Caused by: java.net.BindException: Address already in use"}}
+2020-05-26 22:00:16,703 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014613: Operation ("add") failed - address: ([("subsystem" => "webservices")]) - failure description: {"JBAS014879: One or more services were unable to start due to one or more indirect dependencies not being available." => {
+    "Services that were unable to start:" => ["jboss.ws.config"],
+    "Services that may be the cause:" => [
+        "jboss.http-upgrade-registry.default",
+        "jboss.remoting.remotingConnectorInfoService.http-remoting-connector"
+    ]
+}}
+2020-05-26 22:00:16,710 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014613: Operation ("add") failed - address: ([
+    ("subsystem" => "ejb3"),
+    ("service" => "remote")
+]) - failure description: {"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.ejb3.connector is missing [jboss.remoting.remotingConnectorInfoService.http-remoting-connector]"]}
+2020-05-26 22:00:16,737 INFO  [org.jboss.as.controller] (Controller Boot Thread) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.http-upgrade-registry.default (missing) dependents: [service jboss.messaging.default] 
+      service jboss.remoting.remotingConnectorInfoService.http-remoting-connector (missing) dependents: [service jboss.ejb3.connector] 
+JBAS014777:   Services which failed to start:      service jboss.undertow.listener.default: org.jboss.msc.service.StartException in service jboss.undertow.listener.default: Could not start http listener
+
+2020-05-26 22:00:16,905 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+2020-05-26 22:00:16,905 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
+2020-05-26 22:00:16,906 ERROR [org.jboss.as] (Controller Boot Thread) JBAS015875: WildFly 8.1.0.Final "Kenny" started (with errors) in 3887ms - Started 195 of 258 services (5 services failed or missing dependencies, 91 services are lazy, passive or on-demand)
+2020-05-26 22:00:23,146 INFO  [org.jboss.as.controller] (management-handler-thread - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.undertow.listener.default: org.jboss.msc.service.StartException in service jboss.undertow.listener.default: Could not start http listener
+
+2020-05-26 22:00:23,172 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2020-05-26 22:00:23,174 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017532: Host default-host stopping
+2020-05-26 22:00:23,182 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010418: Stopped Driver service with driver-name = h2
+2020-05-26 22:00:23,183 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017506: Undertow 1.0.15.Final stopping
+2020-05-26 22:00:23,208 INFO  [org.jboss.as] (MSC service thread 1-5) JBAS015950: WildFly 8.1.0.Final "Kenny" stopped in 43ms

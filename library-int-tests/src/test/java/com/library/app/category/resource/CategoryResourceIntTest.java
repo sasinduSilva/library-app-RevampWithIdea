@@ -58,6 +58,10 @@ public class CategoryResourceIntTest {
     @Before
     public void initTestCase() {
         this.resourceClient = new ResourceClient(url);
+
+        resourceClient.resourcePath("/DB").delete();
+
+
     }
 
     @Test

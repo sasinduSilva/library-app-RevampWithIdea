@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.library.app.category.resource.CategoryResourceIntTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.82 sec <<< FAILURE! - in com.library.app.category.resource.CategoryResourceIntTest
-com.library.app.category.resource.CategoryResourceIntTest  Time elapsed: 10.82 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.524 sec <<< FAILURE! - in com.library.app.category.resource.CategoryResourceIntTest
+com.library.app.category.resource.CategoryResourceIntTest  Time elapsed: 11.524 sec  <<< ERROR!
 java.lang.RuntimeException: Could not invoke deployment method: public static org.jboss.shrinkwrap.api.spec.WebArchive com.library.app.category.resource.CategoryResourceIntTest.createDeployment()
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:459)
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:262)
@@ -17,7 +17,7 @@ java.lang.RuntimeException: Could not invoke deployment method: public static or
 	at org.jboss.shrinkwrap.resolver.impl.maven.MavenStrategyStageBaseImpl.using(MavenStrategyStageBaseImpl.java:71)
 	at org.jboss.shrinkwrap.resolver.impl.maven.MavenStrategyStageBaseImpl.withTransitivity(MavenStrategyStageBaseImpl.java:53)
 	at org.jboss.shrinkwrap.resolver.impl.maven.MavenStrategyStageBaseImpl.withTransitivity(MavenStrategyStageBaseImpl.java:40)
-	at com.library.app.category.resource.CategoryResourceIntTest.createDeployment(CategoryResourceIntTest.java:51)
+	at com.library.app.category.resource.CategoryResourceIntTest.createDeployment(CategoryResourceIntTest.java:55)
 Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact com.google.code.gson:gson:pom:2.3.1 from/to central (http://repo1.maven.org/maven2): Failed to look for file: http://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom. Return code is: 501
 	at org.eclipse.aether.connector.wagon.WagonRepositoryConnector$6.wrap(WagonRepositoryConnector.java:1016)
 	at org.eclipse.aether.connector.wagon.WagonRepositoryConnector$6.wrap(WagonRepositoryConnector.java:1004)
