@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="library-resource-war" />
+        <module name="library-ear" />
         <module name="library-int-tests" />
         <module name="library-resource" />
         <module name="library-model" />

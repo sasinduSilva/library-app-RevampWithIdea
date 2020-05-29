@@ -5,14 +5,14 @@ import com.google.gson.JsonObject;
 
 public final class JsonUtils {
 
-    private JsonUtils() {
-    }
+	private JsonUtils() {
+	}
 
-    public static JsonElement getJsonElementWithId(final Long id) {
-        final JsonObject idJson = new JsonObject();
-        idJson.addProperty("id", id);
+	public static JsonElement getJsonElementWithId(final Long id) {
+		final JsonObject idJson = new JsonObject();
+		idJson.addProperty("id", id);
 
-        return idJson;
-    }
+		return idJson;
+	}
 
 }

@@ -1,4 +1,4 @@
 com/library/app/category/resource/CategoryResourceUTest.class
 com/library/app/commontests/utils/FileTestNameUtils.class
-com/library/app/commontests/utils/ResourceDefinition.class
 com/library/app/commontests/utils/JsonTestUtils.class
+com/library/app/commontests/utils/ResourceDefinitions.class

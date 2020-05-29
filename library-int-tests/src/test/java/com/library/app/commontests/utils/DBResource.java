@@ -7,14 +7,12 @@ import javax.ws.rs.Path;
 @Path("/DB")
 public class DBResource {
 
-    @Inject
-    private TestRepositoryEJB testRepositoryEJB;
+	@Inject
+	private TestRepositoryEJB tesRepositoryEJB;
 
-
-    @DELETE
-    public void deleteAll(){
-        testRepositoryEJB.deleteAll();
-
-}
+	@DELETE
+	public void deleteAll() {
+		tesRepositoryEJB.deleteAll();
+	}
 
 }
