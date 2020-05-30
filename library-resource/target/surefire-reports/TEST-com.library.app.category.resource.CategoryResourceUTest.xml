@@ -58,15 +58,15 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="updateCategoryNotFound" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.255"/>
+  <testcase name="updateCategoryNotFound" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.247"/>
   <testcase name="addValidCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.003"/>
-  <testcase name="updateValidCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.004"/>
-  <testcase name="updateCategoryWithNullName" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.006"/>
-  <testcase name="findAllNoCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.003"/>
-  <testcase name="findCategoryNotFound" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.002"/>
+  <testcase name="updateValidCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.006"/>
+  <testcase name="updateCategoryWithNullName" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.01"/>
+  <testcase name="findAllNoCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.002"/>
+  <testcase name="findCategoryNotFound" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.003"/>
   <testcase name="findCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.001"/>
-  <testcase name="addCategoryWithNullName" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.005"/>
+  <testcase name="addCategoryWithNullName" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.006"/>
   <testcase name="findAllTwoCategories" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.002"/>
-  <testcase name="updateCategoryWithNameBelongingToOtherCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.005"/>
-  <testcase name="addExistentCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.006"/>
+  <testcase name="updateCategoryWithNameBelongingToOtherCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.007"/>
+  <testcase name="addExistentCategory" classname="com.library.app.category.resource.CategoryResourceUTest" time="0.005"/>
 </testsuite>
