@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/library-app.iml" filepath="$PROJECT_DIR$/library-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-ear/library-ear.iml" filepath="$PROJECT_DIR$/library-ear/library-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-int-tests/library-int-tests.iml" filepath="$PROJECT_DIR$/library-int-tests/library-int-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-model/library-model.iml" filepath="$PROJECT_DIR$/library-model/library-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-resource/library-resource.iml" filepath="$PROJECT_DIR$/library-resource/library-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-resource-war/library-resource-war.iml" filepath="$PROJECT_DIR$/library-resource-war/library-resource-war.iml" />
+    </modules>
+  </component>
+</project>
