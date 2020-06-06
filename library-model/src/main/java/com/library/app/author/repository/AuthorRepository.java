@@ -1,10 +1,13 @@
 package com.library.app.author.repository;
 
 import com.library.app.author.model.Author;
+import com.library.app.common.model.PaginatedData;
+import com.library.app.common.model.filter.AuthorFilter;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Stateless
 public class AuthorRepository {
@@ -34,4 +37,11 @@ public class AuthorRepository {
                 .setMaxResults(1)
                 .getResultList().size() > 0;
     }
+
+    @SuppressWarnings("unchecked")
+    public PaginatedData<Author> findByFilter(AuthorFilter filter){
+        List<Author> authors = em.createQuery("select e FROM Author e order by e.name").getResultList();
+        return new PaginatedData<Author>(authors.size(),authors);
+    }
+
 }

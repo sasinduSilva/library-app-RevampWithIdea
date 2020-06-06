@@ -8,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.library.app.common.model.PaginatedData;
+import com.library.app.common.model.filter.AuthorFilter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -85,5 +87,29 @@ public class AuthorRepositoryUTest {
 		assertThat(authorRepository.existById(authorAddedId), is(equalTo(true)));
 		assertThat(authorRepository.existById(999l), is(equalTo(false)));
 	}
+	@Test
+	public void findByFilterNoFilter(){
+		loadDataForFindbyFilter();
+
+		PaginatedData<Author> result = authorRepository.findByFilter(new AuthorFilter());
+		assertThat(result.getNumberOfRows(), is(equalTo(4)));
+		assertThat(result.getRows().size(), is(equalTo(4)));
+		assertThat(result.getRow(0).getName(), is(equalTo(erichGamma().getName())));
+		assertThat(result.getRow(1).getName(), is(equalTo(jamesGosling().getName())));
+		assertThat(result.getRow(2).getName(), is(equalTo(martinFowler().getName())));
+		assertThat(result.getRow(3).getName(), is(equalTo(robertMartin().getName())));
+
+	}
+
+	private void loadDataForFindbyFilter(){
+		dbCommandExecutor.executeCommand(() -> {
+			authorRepository.add(robertMartin());
+			authorRepository.add(jamesGosling());
+			authorRepository.add(martinFowler());
+			authorRepository.add(erichGamma());
+			return null;
+		});
+	}
+
 
 }
