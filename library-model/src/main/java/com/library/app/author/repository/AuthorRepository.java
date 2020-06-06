@@ -14,27 +14,37 @@ import com.library.app.author.model.Author;
 import com.library.app.common.model.filter.AuthorFilter.*;
 import com.library.app.common.model.PaginatedData;
 import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.common.repository.GenericRepository;
 
 @Stateless
-public class AuthorRepository {
+public class AuthorRepository extends GenericRepository<Author> {
 
     @PersistenceContext
     EntityManager em;
 
-    public Author add(final Author author) {
-        em.persist(author);
-        return author;
+    @Override
+    protected Class<Author> getPersistentClass() {
+        return Author.class;
     }
 
-    public Author findById(final Long id) {
-        if (id == null) {
-            return null;
-        }
-        return em.find(Author.class, id);
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
     }
 
-    public void update(final Author author) {
-        em.merge(author);
+    @Override
+    public Author add(Author entity) {
+        return super.add(entity);
+    }
+
+    @Override
+    public void update(Author entity) {
+        super.update(entity);
+    }
+
+    @Override
+    public Author findById(Long id) {
+        return super.findById(id);
     }
 
     public boolean existById(final long id) {
