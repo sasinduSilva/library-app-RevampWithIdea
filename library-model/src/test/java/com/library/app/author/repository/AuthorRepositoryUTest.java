@@ -101,6 +101,15 @@ public class AuthorRepositoryUTest {
 
 	}
 
+	@Test
+	public void findByFilterFilteringByNameAndPaginatingAndOrderingDscending(){
+		loadDataForFindbyFilter();
+		AuthorFilter authorFilter = new AuthorFilter();
+		authorFilter.setName("o");
+
+		PaginatedData<Author> result = authorRepository.findByFilter(authorFilter);
+	}
+
 	private void loadDataForFindbyFilter(){
 		dbCommandExecutor.executeCommand(() -> {
 			authorRepository.add(robertMartin());
