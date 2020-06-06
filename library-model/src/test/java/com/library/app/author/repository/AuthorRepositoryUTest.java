@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 
 import com.library.app.common.model.PaginatedData;
 import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.common.model.filter.PaginationData;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -106,8 +107,24 @@ public class AuthorRepositoryUTest {
 		loadDataForFindbyFilter();
 		AuthorFilter authorFilter = new AuthorFilter();
 		authorFilter.setName("o");
+		authorFilter.setPaginationData(new PaginationData(0,2,"name", PaginationData.OrderMode.DESCENDIG));
+
 
 		PaginatedData<Author> result = authorRepository.findByFilter(authorFilter);
+		assertThat(result.getNumberOfRows(), is(equalTo(3)));
+		assertThat(result.getRows().size(), is(equalTo(2)));
+		assertThat(result.getRow(0).getName(), is(equalTo(robertMartin().getName())));
+		assertThat(result.getRow(1).getName(), is(equalTo(martinFowler().getName())));
+
+		authorFilter.setPaginationData(new PaginationData(2,2,"name", PaginationData.OrderMode.DESCENDIG));
+		result = authorRepository.findByFilter(authorFilter);
+
+		assertThat(result.getNumberOfRows(), is(equalTo(3)));
+		assertThat(result.getRows().size(), is(equalTo(1)));
+		assertThat(result.getRow(0).getName(), is(equalTo(jamesGosling().getName())));
+
+
+
 	}
 
 	private void loadDataForFindbyFilter(){
