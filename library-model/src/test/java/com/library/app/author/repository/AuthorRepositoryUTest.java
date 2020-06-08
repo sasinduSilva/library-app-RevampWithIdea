@@ -85,8 +85,8 @@ public class AuthorRepositoryUTest {
 			return authorRepository.add(robertMartin()).getId();
 		});
 
-		assertThat(authorRepository.existById(authorAddedId), is(equalTo(true)));
-		assertThat(authorRepository.existById(999l), is(equalTo(false)));
+		assertThat(authorRepository.existsById(authorAddedId), is(equalTo(true)));
+		assertThat(authorRepository.existsById(999l), is(equalTo(false)));
 	}
 	@Test
 	public void findByFilterNoFilter(){

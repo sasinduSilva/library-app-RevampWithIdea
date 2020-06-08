@@ -47,12 +47,7 @@ public class AuthorRepository extends GenericRepository<Author> {
         return super.findById(id);
     }
 
-    public boolean existById(final long id) {
-        return em.createQuery("Select 1 From Author e where e.id = :id")
-                .setParameter("id", id)
-                .setMaxResults(1)
-                .getResultList().size() > 0;
-    }
+
 
     @SuppressWarnings("unchecked")
     public PaginatedData<Author> findByFilter(final AuthorFilter filter) {
