@@ -28,7 +28,7 @@ public abstract class GenericRepository<T> {
     }
     @SuppressWarnings("unchecked")
     public List<T> findAll(final String orderField) {
-        return getEntityManager().createQuery("Select e From " + getPersistentClass() + " e Order by e." + orderField).getResultList();
+        return getEntityManager().createQuery("Select e From " + getPersistentClass().getSimpleName() + " e Order by e." + orderField).getResultList();
     }
 
     public boolean alreadyExists(String propertyName,  String propertyValue, Long id) {
@@ -48,7 +48,7 @@ public abstract class GenericRepository<T> {
     }
 
     public boolean existsById(final Long id) {
-        return getEntityManager().createQuery("Select 1 From " + getPersistentClass() + " e where e.id = :id")
+        return getEntityManager().createQuery("Select 1 From " + getPersistentClass().getSimpleName() + " e where e.id = :id")
                 .setParameter("id", id)
                 .setMaxResults(1)
                 .getResultList().size() > 0;
