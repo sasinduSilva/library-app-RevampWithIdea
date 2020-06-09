@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.library.app.commontests.utils.TestBaseRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,11 +18,9 @@ import org.junit.Test;
 import com.library.app.category.model.Category;
 import com.library.app.commontests.utils.DBCommandTransactionalExecutor;
 
-public class CategoryRepositoryUTest {
-	private EntityManagerFactory emf;
-	private EntityManager em;
+public class CategoryRepositoryUTest extends TestBaseRepository {
 	private CategoryRepository categoryRepository;
-	private DBCommandTransactionalExecutor dBCommandTransactionalExecutor;
+
 
 	@Before
 	public void initTestCase() {
@@ -35,7 +34,7 @@ public class CategoryRepositoryUTest {
 	}
 
 	@After
-	public void closeEntityManager() {
+	public void setDownTestCase() {
 		em.close();
 		emf.close();
 	}

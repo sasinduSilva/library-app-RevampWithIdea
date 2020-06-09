@@ -14,6 +14,7 @@ import com.library.app.common.repository.GenericRepository;
 public class CategoryRepository extends GenericRepository<Category> {
 
 	@PersistenceContext
+	public
 	EntityManager em;
 
 	@Override
