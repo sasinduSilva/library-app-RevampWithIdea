@@ -33,7 +33,7 @@ public abstract class GenericRepository<T> {
 
     public boolean alreadyExists(String propertyName,  String propertyValue, Long id) {
         StringBuilder jpql = new StringBuilder();
-        jpql.append("Select 1 From " + getPersistentClass().getSimpleName() + "e where e." + propertyName + " = :propertyValue");
+        jpql.append("Select 1 From " + getPersistentClass().getSimpleName() + " e where e." + propertyName + " = :propertyValue");
         if (id != null){
             jpql.append("and e.id != :id");
         }

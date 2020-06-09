@@ -13,16 +13,16 @@ import javax.persistence.Persistence;
 public class TestBaseRepository {
     private EntityManagerFactory emf;
     protected EntityManager em;
-    protected DBCommandTransactionalExecutor dBCommandTransactionalExecutor;
+    protected DBCommandTransactionalExecutor dbCommandExecutor;
 
 
-    protected void initializeTest() {
+    protected void initializeTestDB() {
         emf = Persistence.createEntityManagerFactory("libraryPU");
         em = emf.createEntityManager();
 
 
 
-        dBCommandTransactionalExecutor = new DBCommandTransactionalExecutor(em);
+        dbCommandExecutor = new DBCommandTransactionalExecutor(em);
     }
 
 
