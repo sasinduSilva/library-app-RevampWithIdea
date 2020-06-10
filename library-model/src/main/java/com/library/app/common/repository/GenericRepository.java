@@ -35,7 +35,7 @@ public abstract class GenericRepository<T> {
         StringBuilder jpql = new StringBuilder();
         jpql.append("Select 1 From " + getPersistentClass().getSimpleName() + " e where e." + propertyName + " = :propertyValue");
         if (id != null){
-            jpql.append("and e.id != :id");
+            jpql.append(" and e.id != :id");
         }
 
         Query query = getEntityManager().createQuery(jpql.toString());
