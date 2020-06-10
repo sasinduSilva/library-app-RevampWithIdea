@@ -11,6 +11,7 @@ import javax.persistence.Persistence;
 import com.library.app.common.model.PaginatedData;
 import com.library.app.common.model.filter.AuthorFilter;
 import com.library.app.common.model.filter.PaginationData;
+import com.library.app.commontests.utils.TestBaseRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,27 +19,23 @@ import org.junit.Test;
 import com.library.app.author.model.Author;
 import com.library.app.commontests.utils.DBCommandTransactionalExecutor;
 
-public class AuthorRepositoryUTest {
-	private EntityManagerFactory emf;
-	private EntityManager em;
-	private DBCommandTransactionalExecutor dbCommandExecutor;
+public class AuthorRepositoryUTest extends TestBaseRepository {
 	private AuthorRepository authorRepository;
 
 	@Before
 	public void initTestCase() {
-		emf = Persistence.createEntityManagerFactory("libraryPU");
-		em = emf.createEntityManager();
+		initializeTestDB();
 
 		authorRepository = new AuthorRepository();
 		authorRepository.em = em;
 
-		dbCommandExecutor = new DBCommandTransactionalExecutor(em);
+
 	}
 
 	@After
-	public void closeEntityManager() {
-		em.close();
-		emf.close();
+	public void setDownTestCase() {
+		closeEntityManager();
+
 	}
 
 	@Test
