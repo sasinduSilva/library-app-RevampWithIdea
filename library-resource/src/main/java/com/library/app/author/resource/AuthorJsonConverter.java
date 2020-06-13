@@ -9,7 +9,7 @@ import com.library.app.common.json.JsonReader;
 public class AuthorJsonConverter implements EntityJsonConverter<Author> {
 
     @Override
-    public Author convertFrom(String json) {
+    public static Author convertFrom(String json) {
         JsonObject jsonObject = JsonReader.readAsJsonObject(json);
 
         Author author = new Author();
