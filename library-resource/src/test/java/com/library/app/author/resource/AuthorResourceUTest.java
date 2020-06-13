@@ -21,6 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static com.library.app.common.json.JsonUtils.*;
 
@@ -62,11 +63,20 @@ public class AuthorResourceUTest {
         assertJsonResponseWithFile(response, "authorErrorNullName.json");
 
 
-
-
-
-
     }
+
+
+
+    @Test
+    public void updateValidAuthor() throws Exception{
+        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
+        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
+        assertThat(response.getEntity().toString(), is(equalTo("")));
+
+        verify(authorServices).update(authorWithId(robertMartin(), 1L));
+    }
+
+
     private void assertJsonResponseWithFile(Response response, String fileName){
         assertJsonMatchesFileContent(response.getEntity().toString(), getPathFileRequest(PATH_RESOURCE, fileName));
     }
