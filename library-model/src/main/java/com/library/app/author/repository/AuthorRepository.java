@@ -32,20 +32,7 @@ public class AuthorRepository extends GenericRepository<Author> {
         return em;
     }
 
-    @Override
-    public Author add(Author entity) {
-        return super.add(entity);
-    }
 
-    @Override
-    public void update(Author entity) {
-        super.update(entity);
-    }
-
-    @Override
-    public Author findById(Long id) {
-        return super.findById(id);
-    }
 
 
 

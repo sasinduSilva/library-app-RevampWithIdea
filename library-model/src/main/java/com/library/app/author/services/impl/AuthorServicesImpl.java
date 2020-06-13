@@ -8,6 +8,7 @@ import com.library.app.category.model.Category;
 import com.library.app.common.exception.FieldNotValidException;
 import com.library.app.common.model.PaginatedData;
 import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.common.utils.ValidationUtils;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -26,9 +27,9 @@ public class AuthorServicesImpl implements AuthorServices {
 
     @Override
     public Author add(Author author) throws FieldNotValidException {
-        validateAuthorFields(author);
+     ValidationUtils.validateEntityFields(validator,author);
 
-        return authorRepository.add(author);
+     return authorRepository.add(author);
     }
 
     @Override
@@ -44,12 +45,16 @@ public class AuthorServicesImpl implements AuthorServices {
 
     @Override
     public Author findById(Long id) throws AuthorNotFoundException {
-        return null;
+        final Author author = authorRepository.findById(id);
+        if (author == null) {
+            throw new AuthorNotFoundException();
+        }
+        return author;
     }
 
     @Override
     public PaginatedData<Author> findByFilter(AuthorFilter authorFilter) {
-        return null;
+        return authorRepository.findByFilter(authorFilter);
     }
 
 
