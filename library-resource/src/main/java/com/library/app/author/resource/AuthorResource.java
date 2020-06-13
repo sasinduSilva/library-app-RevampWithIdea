@@ -1,5 +1,6 @@
 package com.library.app.author.resource;
 
+import com.library.app.author.exception.AuthorNotFoundException;
 import com.library.app.author.model.Author;
 import com.library.app.author.services.AuthorServices;
 import com.library.app.common.exception.FieldNotValidException;
@@ -13,14 +14,12 @@ import org.slf4j.LoggerFactory;
 import static com.library.app.author.resource.AuthorJsonConverter.*;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import static com.library.app.common.model.StandardsOperationResults.getOperationResultInvalidField;
+import static com.library.app.common.model.StandardsOperationResults.getOperationResultNotFound;
 
 //@Path("/authors")
 @Produces(MediaType.APPLICATION_JSON)
@@ -60,6 +59,33 @@ public class AuthorResource {
         logger.debug("Returning the operation result after adding author: {}", result);
         return Response.status(httpCode.getCode()).entity(OperationResultJsonWriter.toJson(result)).build();
 
+    }
+
+    @PUT
+    @Path("/{id}")
+    public Response update(@PathParam("id") final Long id, final String body){
+        logger.debug("Updating the author {} with body {}", id, body);
+        final Author author = authorJsonConverter.convertFrom(body);
+        author.setId(id);
+
+        HttpCode httpCode = HttpCode.OK;
+        OperationResult result;
+        try{
+            authorServices.update(author);
+            result = OperationResult.success();
+
+        }catch (FieldNotValidException e){
+            httpCode = HttpCode.VALIDATION_ERROR;
+            logger.error("One of the fields of the author is not valid", e);
+            result = getOperationResultInvalidField(RESOURCE_MESSAGE,e);
+        }catch (AuthorNotFoundException e){
+            httpCode = HttpCode.NOT_FOUND;
+            logger.error("No author found for the given id", e);
+            result = getOperationResultNotFound(RESOURCE_MESSAGE);
+        }
+
+        logger.debug("Returning the operation result after updating author: {}", result);
+        return Response.status(httpCode.getCode()).entity(OperationResultJsonWriter.toJson(result)).build();
     }
 
 
