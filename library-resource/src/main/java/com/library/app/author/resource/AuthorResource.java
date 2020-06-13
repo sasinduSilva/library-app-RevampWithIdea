@@ -89,4 +89,22 @@ public class AuthorResource {
     }
 
 
+    @GET
+    @Path("/{id}")
+    public Response findById(@PathParam("id") final Long id){
+        logger.debug("Find author: {}", id);
+        Response.ResponseBuilder responseBuilder;
+        try {
+            final Author author = authorServices.findById(id);
+            final OperationResult result = OperationResult.success(authorJsonConverter.convertToJsonElement(author));
+            responseBuilder = Response.status(HttpCode.OK.getCode()).entity(OperationResultJsonWriter.toJson(result));
+            logger.debug("Author found: {}", author);
+        }catch (final  AuthorNotFoundException e){
+            logger.error("No author found for id", id);
+            responseBuilder = Response.status(HttpCode.NOT_FOUND.getCode());
+        }
+
+        return responseBuilder.build();
+    }
+
 }
