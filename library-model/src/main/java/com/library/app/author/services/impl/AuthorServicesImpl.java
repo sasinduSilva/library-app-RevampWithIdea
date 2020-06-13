@@ -58,12 +58,5 @@ public class AuthorServicesImpl implements AuthorServices {
     }
 
 
-    private void validateAuthorFields( Author author) {
-         Set<ConstraintViolation<Author>> errors = validator.validate(author);
-         Iterator<ConstraintViolation<Author>> itErrors = errors.iterator();
-        if (itErrors.hasNext()) {
-             ConstraintViolation<Author> violation = itErrors.next();
-            throw new FieldNotValidException(violation.getPropertyPath().toString(), violation.getMessage());
-        }
-    }
+
 }
