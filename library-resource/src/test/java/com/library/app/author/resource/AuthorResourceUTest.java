@@ -21,9 +21,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import static com.library.app.common.json.JsonUtils.*;
+import static org.mockito.Mockito.*;
 
 public class AuthorResourceUTest {
     private AuthorResource authorResource;
@@ -75,6 +74,17 @@ public class AuthorResourceUTest {
 
         verify(authorServices).update(authorWithId(robertMartin(), 1L));
     }
+
+    @Test
+    public void updateAuthorWithNullName() throws Exception{
+        doThrow(new FieldNotValidException("name", "may not be null")).when(authorServices).update((Author) anyObject());
+        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE, "authorWithNullName.json")));
+        assertThat(response.getStatus(), is(equalTo(HttpCode.VALIDATION_ERROR.getCode())));
+        assertJsonResponseWithFile(response,"authorErrorNullName.json");
+
+    }
+
+    
 
 
     private void assertJsonResponseWithFile(Response response, String fileName){
