@@ -1,5 +1,6 @@
 package com.library.app.author.resource;
 
+import com.library.app.author.exception.AuthorNotFoundException;
 import com.library.app.author.model.Author;
 import com.library.app.author.services.AuthorServices;
 import com.library.app.common.exception.FieldNotValidException;
@@ -83,8 +84,17 @@ public class AuthorResourceUTest {
         assertJsonResponseWithFile(response,"authorErrorNullName.json");
 
     }
+    @Test
+    public void updateAuthorNotFound()throws Exception{
+        doThrow(new AuthorNotFoundException()).when(authorServices).update(authorWithId(robertMartin(),2L));
+        Response response = authorResource.update(2L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
+        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
+    }
 
     
+
+
+
 
 
     private void assertJsonResponseWithFile(Response response, String fileName){
