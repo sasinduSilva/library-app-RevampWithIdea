@@ -91,7 +91,16 @@ public class AuthorResourceUTest {
         assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
     }
 
-    
+    @Test
+    public void findAuthor()throws AuthorNotFoundException{
+        when(authorServices.findById(1L)).thenReturn(authorWithId(robertMartin(), 1L));
+
+        Response response = authorResource.findById(1L);
+        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
+        assertJsonResponseWithFile(response,"robertMartinFound.json");
+    }
+
+
 
 
 
