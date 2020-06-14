@@ -99,12 +99,13 @@ public class AuthorResourceUTest {
         assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
         assertJsonResponseWithFile(response,"robertMartinFound.json");
     }
+    @Test
+    public void findAuthorNotFound()throws AuthorNotFoundException{
+        when(authorServices.findById(1L)).thenThrow(new AuthorNotFoundException());
 
-
-
-
-
-
+        Response response = authorResource.findById(1L);
+        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
+    }
 
     private void assertJsonResponseWithFile(Response response, String fileName){
         assertJsonMatchesFileContent(response.getEntity().toString(), getPathFileRequest(PATH_RESOURCE, fileName));
