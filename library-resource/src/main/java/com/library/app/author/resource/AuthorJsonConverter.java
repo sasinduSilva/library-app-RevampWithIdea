@@ -6,10 +6,13 @@ import com.library.app.author.model.Author;
 import com.library.app.common.json.EntityJsonConverter;
 import com.library.app.common.json.JsonReader;
 
+import javax.faces.bean.ApplicationScoped;
+
+@ApplicationScoped
 public class AuthorJsonConverter implements EntityJsonConverter<Author> {
 
     @Override
-    public static Author convertFrom(String json) {
+    public  Author convertFrom(String json) {
         JsonObject jsonObject = JsonReader.readAsJsonObject(json);
 
         Author author = new Author();

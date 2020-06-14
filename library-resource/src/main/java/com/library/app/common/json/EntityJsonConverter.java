@@ -6,7 +6,7 @@ import com.google.gson.JsonElement;
 import java.util.List;
 
 public interface EntityJsonConverter<T> {
-    T convertFrom(String json);
+     T convertFrom(String json);
 
     JsonElement convertToJsonElement(T entity);
 

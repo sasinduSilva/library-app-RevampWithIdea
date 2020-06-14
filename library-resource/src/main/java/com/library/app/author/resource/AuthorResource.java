@@ -40,7 +40,7 @@ public class AuthorResource {
     public Response add(final String body){
         logger.debug("Adding a new author with body {}", body);
 
-        Author author = AuthorJsonConverter.convertFrom(body);
+        Author author = authorJsonConverter.convertFrom(body);
 
 
         HttpCode httpCode = HttpCode.CREATED;
