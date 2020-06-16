@@ -21,7 +21,7 @@ import javax.ws.rs.core.Response;
 import static com.library.app.common.model.StandardsOperationResults.getOperationResultInvalidField;
 import static com.library.app.common.model.StandardsOperationResults.getOperationResultNotFound;
 
-//@Path("/authors")
+@Path("/author")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class AuthorResource {
@@ -39,12 +39,8 @@ public class AuthorResource {
     @POST
     public Response add(final String body){
         logger.debug("Adding a new author with body {}", body);
-
         Author author = authorJsonConverter.convertFrom(body);
-
-
         HttpCode httpCode = HttpCode.CREATED;
-
         OperationResult result;
         try {
             authorServices.add(author);
