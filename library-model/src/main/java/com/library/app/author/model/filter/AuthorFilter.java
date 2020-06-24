@@ -1,4 +1,6 @@
-package com.library.app.common.model.filter;
+package com.library.app.author.model.filter;
+
+import com.library.app.common.model.filter.GenericFilter;
 
 public class AuthorFilter extends GenericFilter {
     private String name;

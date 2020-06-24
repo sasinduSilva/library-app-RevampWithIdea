@@ -4,12 +4,8 @@ import static com.library.app.commontests.author.AuthorForTestRepository.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import com.library.app.common.model.PaginatedData;
-import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.author.model.filter.AuthorFilter;
 import com.library.app.common.model.filter.PaginationData;
 import com.library.app.commontests.utils.TestBaseRepository;
 import org.junit.After;
@@ -17,7 +13,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.library.app.author.model.Author;
-import com.library.app.commontests.utils.DBCommandTransactionalExecutor;
 
 public class AuthorRepositoryUTest extends TestBaseRepository {
 	private AuthorRepository authorRepository;

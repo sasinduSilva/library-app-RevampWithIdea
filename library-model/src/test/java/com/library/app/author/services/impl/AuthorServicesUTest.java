@@ -9,7 +9,7 @@ import com.library.app.author.repository.AuthorRepository;
 import com.library.app.author.services.AuthorServices;
 import com.library.app.common.exception.FieldNotValidException;
 import com.library.app.common.model.PaginatedData;
-import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.author.model.filter.AuthorFilter;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;

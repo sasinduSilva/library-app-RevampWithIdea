@@ -4,7 +4,7 @@ import com.library.app.author.exception.AuthorNotFoundException;
 import com.library.app.author.model.Author;
 import com.library.app.common.exception.FieldNotValidException;
 import com.library.app.common.model.PaginatedData;
-import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.author.model.filter.AuthorFilter;
 
 import javax.ejb.Local;
 

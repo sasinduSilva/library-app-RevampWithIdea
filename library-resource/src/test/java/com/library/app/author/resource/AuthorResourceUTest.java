@@ -67,45 +67,45 @@ public class AuthorResourceUTest {
 
 
 
-//    @Test
-//    public void updateValidAuthor() throws Exception{
-//        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
-//        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
-//        assertThat(response.getEntity().toString(), is(equalTo("")));
-//
-//        verify(authorServices).update(authorWithId(robertMartin(), 1L));
-//    }
-//
-//    @Test
-//    public void updateAuthorWithNullName() throws Exception{
-//        doThrow(new FieldNotValidException("name", "may not be null")).when(authorServices).update((Author) anyObject());
-//        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE, "authorWithNullName.json")));
-//        assertThat(response.getStatus(), is(equalTo(HttpCode.VALIDATION_ERROR.getCode())));
-//        assertJsonResponseWithFile(response,"authorErrorNullName.json");
-//
-//    }
-//    @Test
-//    public void updateAuthorNotFound()throws Exception{
-//        doThrow(new AuthorNotFoundException()).when(authorServices).update(authorWithId(robertMartin(),2L));
-//        Response response = authorResource.update(2L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
-//        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
-//    }
-//
-//    @Test
-//    public void findAuthor()throws AuthorNotFoundException{
-//        when(authorServices.findById(1L)).thenReturn(authorWithId(robertMartin(), 1L));
-//
-//        Response response = authorResource.findById(1L);
-//        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
-//        assertJsonResponseWithFile(response,"robertMartinFound.json");
-//    }
-//    @Test
-//    public void findAuthorNotFound()throws AuthorNotFoundException{
-//        when(authorServices.findById(1L)).thenThrow(new AuthorNotFoundException());
-//
-//        Response response = authorResource.findById(1L);
-//        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
-//    }
+    @Test
+    public void updateValidAuthor() throws Exception{
+        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
+        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
+        assertThat(response.getEntity().toString(), is(equalTo("")));
+
+        verify(authorServices).update(authorWithId(robertMartin(), 1L));
+    }
+
+    @Test
+    public void updateAuthorWithNullName() throws Exception{
+        doThrow(new FieldNotValidException("name", "may not be null")).when(authorServices).update((Author) anyObject());
+        Response response = authorResource.update(1L,readJsonFile(getPathFileRequest(PATH_RESOURCE, "authorWithNullName.json")));
+        assertThat(response.getStatus(), is(equalTo(HttpCode.VALIDATION_ERROR.getCode())));
+        assertJsonResponseWithFile(response,"authorErrorNullName.json");
+
+    }
+    @Test
+    public void updateAuthorNotFound()throws Exception{
+        doThrow(new AuthorNotFoundException()).when(authorServices).update(authorWithId(robertMartin(),2L));
+        Response response = authorResource.update(2L,readJsonFile(getPathFileRequest(PATH_RESOURCE,"robertMartin.json")));
+        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
+    }
+
+    @Test
+    public void findAuthor()throws AuthorNotFoundException{
+        when(authorServices.findById(1L)).thenReturn(authorWithId(robertMartin(), 1L));
+
+        Response response = authorResource.findById(1L);
+        assertThat(response.getStatus(),is(equalTo(HttpCode.OK.getCode())));
+        assertJsonResponseWithFile(response,"robertMartinFound.json");
+    }
+    @Test
+    public void findAuthorNotFound()throws AuthorNotFoundException{
+        when(authorServices.findById(1L)).thenThrow(new AuthorNotFoundException());
+
+        Response response = authorResource.findById(1L);
+        assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
+    }
 
     private void assertJsonResponseWithFile(Response response, String fileName){
         assertJsonMatchesFileContent(response.getEntity().toString(), getPathFileRequest(PATH_RESOURCE, fileName));

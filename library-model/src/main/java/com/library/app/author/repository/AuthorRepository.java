@@ -11,9 +11,8 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.library.app.author.model.Author;
-import com.library.app.common.model.filter.AuthorFilter.*;
 import com.library.app.common.model.PaginatedData;
-import com.library.app.common.model.filter.AuthorFilter;
+import com.library.app.author.model.filter.AuthorFilter;
 import com.library.app.common.repository.GenericRepository;
 
 @Stateless
