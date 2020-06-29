@@ -16,6 +16,7 @@ import javax.ws.rs.core.Response;
 import static com.library.app.commontests.author.AuthorForTestRepository.authorWithId;
 import static com.library.app.commontests.author.AuthorForTestRepository.robertMartin;
 import static com.library.app.commontests.utils.FileTestNameUtils.getPathFileRequest;
+import static com.library.app.commontests.utils.FileTestNameUtils.getPathFileResponse;
 import static com.library.app.commontests.utils.JsonTestUtils.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -107,8 +108,8 @@ public class AuthorResourceUTest {
         assertThat(response.getStatus(), is(equalTo(HttpCode.NOT_FOUND.getCode())));
     }
 
-    private void assertJsonResponseWithFile(Response response, String fileName){
-        assertJsonMatchesFileContent(response.getEntity().toString(), getPathFileRequest(PATH_RESOURCE, fileName));
+    private void assertJsonResponseWithFile(final Response response, final String fileName){
+        assertJsonMatchesFileContent(response.getEntity().toString(), getPathFileResponse(PATH_RESOURCE, fileName));
     }
 
 }

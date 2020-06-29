@@ -1,5 +1,6 @@
 package com.library.app.author.resource;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.library.app.author.model.Author;
@@ -7,11 +8,12 @@ import com.library.app.common.json.EntityJsonConverter;
 import com.library.app.common.json.JsonReader;
 
 import javax.faces.bean.ApplicationScoped;
+import java.util.List;
 
 @ApplicationScoped
-public class AuthorJsonConverter implements EntityJsonConverter<Author> {
+public class AuthorJsonConverter  {
 
-    @Override
+
     public  Author convertFrom(String json) {
         JsonObject jsonObject = JsonReader.readAsJsonObject(json);
 
@@ -21,11 +23,23 @@ public class AuthorJsonConverter implements EntityJsonConverter<Author> {
         return author;
     }
 
-    @Override
-    public JsonElement convertToJsonElement(Author author) {
+
+    public JsonElement convertToJsonElement(Author authors) {
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("id", author.getId());
-        jsonObject.addProperty("name", author.getName());
+        jsonObject.addProperty("id", authors.getId());
+        jsonObject.addProperty("name", authors.getName());
         return jsonObject;
     }
+
+    public JsonElement convertToJsonElement(List<Author> authors){
+        JsonArray jsonArray = new JsonArray();
+
+        for (Author author: authors) {
+            jsonArray.add(convertToJsonElement(author));
+
+        }
+
+        return jsonArray;
+    }
+
 }
