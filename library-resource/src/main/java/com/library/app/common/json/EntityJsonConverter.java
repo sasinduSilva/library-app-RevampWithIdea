@@ -2,6 +2,7 @@ package com.library.app.common.json;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+import com.library.app.category.model.Category;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface EntityJsonConverter<T> {
 
     JsonElement convertToJsonElement(T entity);
 
-    default JsonElement convertToJsonElement(final List<T> entities){
+    default JsonElement convertToJsonElement( List<T> entities){
         JsonArray jsonArray = new JsonArray();
 
         for (T entity: entities) {
@@ -19,4 +20,8 @@ public interface EntityJsonConverter<T> {
         }
         return jsonArray;
     }
+
+
+
+
 }

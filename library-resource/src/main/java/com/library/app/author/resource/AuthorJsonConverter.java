@@ -11,9 +11,9 @@ import javax.faces.bean.ApplicationScoped;
 import java.util.List;
 
 @ApplicationScoped
-public class AuthorJsonConverter  {
+public class AuthorJsonConverter implements EntityJsonConverter<Author>  {
 
-
+    @Override
     public  Author convertFrom(String json) {
         JsonObject jsonObject = JsonReader.readAsJsonObject(json);
 
@@ -23,7 +23,7 @@ public class AuthorJsonConverter  {
         return author;
     }
 
-
+    @Override
     public JsonElement convertToJsonElement(Author authors) {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("id", authors.getId());
@@ -31,15 +31,6 @@ public class AuthorJsonConverter  {
         return jsonObject;
     }
 
-    public JsonElement convertToJsonElement(List<Author> authors){
-        JsonArray jsonArray = new JsonArray();
 
-        for (Author author: authors) {
-            jsonArray.add(convertToJsonElement(author));
-
-        }
-
-        return jsonArray;
-    }
 
 }
