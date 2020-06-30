@@ -1,15 +1,23 @@
 package com.library.app.author.resource;
 
+import com.library.app.author.model.filter.AuthorFilter;
+import com.library.app.common.model.filter.PaginationData;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import sun.nio.cs.Surrogate;
 
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -25,6 +33,14 @@ public class AuthorFilterExtractorFromUrlUtest {
 
     @Test
     public void OnlyDefaultValues(){
+        setUpUriInfo(null,null,null,null);
+
+        AuthorFilterExtractorFromUrl extractor = new AuthorFilterExtractorFromUrl(uriInfo);
+        AuthorFilter authorFilter = extractor.getFilter();
+
+        assertActualPaginationDataWithExpected(authorFilter.getPaginationData(), new PaginationData(0,10,"name", PaginationData.OrderMode.ASCENDING));
+        assertThat(authorFilter.getName(), is(nullValue()));
+
 
     }
 
