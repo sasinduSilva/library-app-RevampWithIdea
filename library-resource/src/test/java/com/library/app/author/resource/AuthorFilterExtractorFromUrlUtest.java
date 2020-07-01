@@ -69,7 +69,7 @@ public class AuthorFilterExtractorFromUrlUtest {
 
     @Test
     public void withPaginationAndNameAndSortDescending(){
-        setUpUriInfo("2","5","Robert","+id");
+        setUpUriInfo("2","5","Robert","-id");
 
         AuthorFilterExtractorFromUrl extractor = new AuthorFilterExtractorFromUrl(uriInfo);
         AuthorFilter authorFilter = extractor.getFilter();
