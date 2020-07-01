@@ -67,6 +67,21 @@ public class AuthorFilterExtractorFromUrlUtest {
 
     }
 
+    @Test
+    public void withPaginationAndNameAndSortDescending(){
+        setUpUriInfo("2","5","Robert","+id");
+
+        AuthorFilterExtractorFromUrl extractor = new AuthorFilterExtractorFromUrl(uriInfo);
+        AuthorFilter authorFilter = extractor.getFilter();
+
+        assertActualPaginationDataWithExpected(authorFilter.getPaginationData(),new PaginationData(10,5,"id", PaginationData.OrderMode.DESCENDIG));
+        assertThat(authorFilter.getName(), is(equalTo("Robert")));
+
+
+    }
+
+
+
 
 
     @SuppressWarnings("unchecked")
