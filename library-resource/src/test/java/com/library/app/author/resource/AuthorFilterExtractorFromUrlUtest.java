@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.internal.matchers.Equality;
 import sun.nio.cs.Surrogate;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -42,7 +43,16 @@ public class AuthorFilterExtractorFromUrlUtest {
 
 
     }
-    
+    @Test
+    public void withPaginationAndNameAndSortAscending(){
+        setUpUriInfo("2","5","Robert","id");
+
+        AuthorFilterExtractorFromUrl extractor = new AuthorFilterExtractorFromUrl(uriInfo);
+        AuthorFilter authorFilter = extractor.getFilter();
+
+        assertActualPaginationDataWithExpected(authorFilter.getPaginationData(),new PaginationData(10,5,"id", PaginationData.OrderMode.ASCENDING));
+        assertThat(authorFilter.getName(), is(equalTo("Robert")));
+    }
 
 
 
