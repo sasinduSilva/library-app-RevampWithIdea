@@ -54,6 +54,19 @@ public class AuthorFilterExtractorFromUrlUtest {
         assertThat(authorFilter.getName(), is(equalTo("Robert")));
     }
 
+    @Test
+    public void withPaginationAndNameAndSortAscendingWithPrefix(){
+        setUpUriInfo("2","5","Robert","+id");
+
+        AuthorFilterExtractorFromUrl extractor = new AuthorFilterExtractorFromUrl(uriInfo);
+        AuthorFilter authorFilter = extractor.getFilter();
+
+        assertActualPaginationDataWithExpected(authorFilter.getPaginationData(),new PaginationData(10,5,"id", PaginationData.OrderMode.ASCENDING));
+        assertThat(authorFilter.getName(), is(equalTo("Robert")));
+
+
+    }
+
 
 
     @SuppressWarnings("unchecked")
