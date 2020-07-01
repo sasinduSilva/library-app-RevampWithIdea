@@ -15,8 +15,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -43,6 +42,9 @@ public class AuthorFilterExtractorFromUrlUtest {
 
 
     }
+    
+
+
 
     @SuppressWarnings("unchecked")
     private void setUpUriInfo(String page, String perPage, String name, String sort){
@@ -60,6 +62,14 @@ public class AuthorFilterExtractorFromUrlUtest {
         }
 
         when(uriInfo.getQueryParameters()).thenReturn(multiMap);
+    }
+
+    private void assertActualPaginationDataWithExpected(PaginationData actual, PaginationData expected) {
+        assertThat(actual.getFirstResult(),is(equalTo(expected.getFirstResult())));
+        assertThat(actual.getMaxResults(),is(equalTo(expected.getMaxResults())));
+        assertThat(actual.getOrderFields(),is(equalTo(expected.getOrderFields())));
+        assertThat(actual.getOrderMode(),is(equalTo(expected.getOrderMode())));
+
     }
 
 
