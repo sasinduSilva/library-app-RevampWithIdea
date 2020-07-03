@@ -1,5 +1,7 @@
 package com.library.app.common.model;
 
+import com.library.app.common.model.filter.PaginationData;
+
 import java.util.List;
 
 public class PaginatedData<T> {
@@ -10,6 +12,8 @@ public class PaginatedData<T> {
         this.numberOfRows = numberOfRows;
         this.rows = rows;
     }
+
+
 
     public int getNumberOfRows() {
         return numberOfRows;
