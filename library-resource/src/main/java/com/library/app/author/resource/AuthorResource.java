@@ -16,6 +16,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
 
+import com.google.gson.JsonElement;
+import com.library.app.author.model.filter.AuthorFilter;
+import com.library.app.common.json.JsonWriter;
+import com.library.app.common.model.PaginatedData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -111,4 +115,16 @@ public class AuthorResource {
         return responseBuilder.build();
     }
 
+    @GET
+    public Response findByFilter() {
+        final AuthorFilter authorFilter = new AuthorFilterExtractorFromUrl(uriInfo).getFilter();
+        logger.debug("Finding authors using filter: {}", authorFilter);
+
+        final PaginatedData<Author> authors = authorServices.findByFilter(authorFilter);
+        logger.debug("Found {} authors", authors.getNumberOfRows());
+
+        final JsonElement jsonWithPagingAndEntries = JsonUtils.getJsonElementWithPagingAndEntries(authors,authorJsonConverter);
+
+        return Response.status(HttpCode.OK.getCode()).entity(JsonWriter.writeToString(jsonWithPagingAndEntries)).build();
+    }
 }
