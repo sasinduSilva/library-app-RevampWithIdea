@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
+import com.library.app.common.model.PaginatedData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -129,7 +130,7 @@ public class CategoryResource {
 
 		logger.debug("Found {} categories", categories.size());
 
-		final JsonElement jsonWithPagingAndEntries = getJsonElementWithPagingAndEntries(categories);
+		final JsonElement jsonWithPagingAndEntries = JsonUtils.getJsonElementWithPagingAndEntries(new PaginatedData<Category>(categories.size(), categories),categoryJsonConverter);
 
 		return Response.status(HttpCode.OK.getCode()).entity(JsonWriter.writeToString(jsonWithPagingAndEntries))
 				.build();
