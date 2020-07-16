@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Built-By: sasindu
-Class-Path: lib/library-resource-0.0.1-SNAPSHOT.jar lib/gson-2.3.1.jar
-Created-By: Apache Maven 3.2.5
-Build-Jdk: 1.8.0_251
-

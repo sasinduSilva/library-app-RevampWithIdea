@@ -1,7 +1,0 @@
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/common/exception/FieldNotValidException.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/model/Category.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/services/impl/CategoryServicesImpl.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/exception/CategoryExistentException.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/services/CategoryServices.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/repository/CategoryRepository.java
-/home/sasindu/IdeaProjects/library-model/src/main/java/com/library/app/category/exception/CategoryNotFoundException.java
