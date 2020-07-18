@@ -9,14 +9,13 @@ public class AuthorFilter extends GenericFilter {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return "AuthorFilter{" +
-                "name='" + name + '\'' +
-                "} " + super.toString();
+        return "AuthorFilter [name=" + name + ", toString()=" + super.toString() + "]";
     }
+
 }
