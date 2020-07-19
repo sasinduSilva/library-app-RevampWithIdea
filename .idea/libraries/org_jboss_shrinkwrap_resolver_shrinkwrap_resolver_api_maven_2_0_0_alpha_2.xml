@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:2.0.0-alpha-2" type="repository">
+    <properties maven-id="org.jboss.shrinkwrap.resolver:shrinkwrap-resolver-api-maven:2.0.0-alpha-2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven/2.0.0-alpha-2/shrinkwrap-resolver-api-maven-2.0.0-alpha-2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api/2.0.0-alpha-2/shrinkwrap-resolver-api-2.0.0-alpha-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api-maven/2.0.0-alpha-2/shrinkwrap-resolver-api-maven-2.0.0-alpha-2-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-api/2.0.0-alpha-2/shrinkwrap-resolver-api-2.0.0-alpha-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

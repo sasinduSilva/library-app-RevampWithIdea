@@ -1,28 +1,5 @@
 package com.library.app.category.resource;
 
-import static com.library.app.commontests.category.CategoryForTestsRepository.*;
-import static com.library.app.commontests.utils.FileTestNameUtils.*;
-import static com.library.app.commontests.utils.JsonTestUtils.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
-
-import java.io.File;
-import java.net.URL;
-
-import javax.ws.rs.core.Response;
-
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.container.test.api.RunAsClient;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.arquillian.test.api.ArquillianResource;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.maven.Maven;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.library.app.category.model.Category;
@@ -31,6 +8,30 @@ import com.library.app.common.model.HttpCode;
 import com.library.app.commontests.utils.IntTestUtils;
 import com.library.app.commontests.utils.ResourceClient;
 import com.library.app.commontests.utils.ResourceDefinitions;
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.container.test.api.RunAsClient;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.test.api.ArquillianResource;
+import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
+import org.jboss.shrinkwrap.api.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import javax.ws.rs.core.Response;
+import java.io.File;
+import java.net.URL;
+
+import static com.library.app.commontests.category.CategoryForTestsRepository.*;
+import static com.library.app.commontests.utils.FileTestNameUtils.getPathFileRequest;
+import static com.library.app.commontests.utils.FileTestNameUtils.getPathFileResponse;
+import static com.library.app.commontests.utils.JsonTestUtils.assertJsonMatchesFileContent;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Arquillian.class)
 public class CategoryResourceIntTest {
