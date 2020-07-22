@@ -1,7 +1,9 @@
 package com.library.app.author.resource;
 
 
+import com.google.gson.JsonObject;
 import com.library.app.author.model.Author;
+import com.library.app.common.json.JsonReader;
 import com.library.app.commontests.utils.ArquillianTestUtils;
 import com.library.app.commontests.utils.IntTestUtils;
 import com.library.app.commontests.utils.ResourceClient;
@@ -18,6 +20,9 @@ import org.junit.runner.RunWith;
 import java.net.URL;
 
 import static com.library.app.commontests.author.AuthorForTestRepository.robertMartin;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 @RunWith(Arquillian.class)
 public class AuthorResourceIntTest {
@@ -49,7 +54,11 @@ public class AuthorResourceIntTest {
             findAuthorAndAssertResponseWithAuthor(authorId, robertMartin());
         }
 
-    private void findAuthorAndAssertResponseWithAuthor(Long authorId, Author robertMartin) {
+    private void findAuthorAndAssertResponseWithAuthor(Long authorIdToBeFound, Author expectedAuthor) {
+            String json = IntTestUtils.findById(resourceClient,PATH_RESOURCE,authorIdToBeFound);
+
+            JsonObject cateGoryAsJson = JsonReader.readAsJsonObject(json);
+            assertThat(JsonReader.getStringOrNull(cateGoryAsJson,"name"), is(equalTo(expectedAuthor.getName())));
     }
 
     private Long addAuthorAndGetId(String fileName) {
